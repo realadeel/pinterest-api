@@ -5,10 +5,6 @@ describe Pinterest do
     expect(Pinterest::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
-  end
-
   describe Pinterest::Client do
 
     let(:client){Pinterest::Client.new(ENV['ACCESS_TOKEN'])}

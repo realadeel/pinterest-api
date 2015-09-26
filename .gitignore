@@ -5,6 +5,7 @@
 /coverage/
 /doc/
 /pkg/
+/spec/fixtures/
 /spec/reports/
 /tmp/
 .env
