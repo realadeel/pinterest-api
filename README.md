@@ -73,10 +73,11 @@ I hope to have the gem ready for production shortly. See Contributing section be
 
 ## TODO
 
+* Easier method names (#create_pin vs. #post('pins/'))
 * Pagination
 * OAuth
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/realadeel/pinterest.  
+Bug reports and pull requests are welcome on GitHub at https://github.com/realadeel/pinterest-ruby.  
 Please provide a failing test for bug reports, and a passing test for pull requests.
