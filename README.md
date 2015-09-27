@@ -76,6 +76,9 @@ I hope to have the gem ready for production shortly. See Contributing section be
 * Easier method names (#create_pin vs. #post('pins/'))
 * Pagination
 * OAuth
+* set up CI
+* document Mash response methods
+* release and publish to Rubygems
 
 ## Contributing
 
