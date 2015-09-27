@@ -1,35 +1,82 @@
 # Pinterest
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pinterest`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Code Climate](https://codeclimate.com/github/realadeel/pinterest-ruby/badges/gpa.svg)](https://codeclimate.com/github/realadeel/pinterest-ruby)  
 
-TODO: Delete this and the text above, and describe your gem
+This is the Ruby gem for interacting with the official [Pinterest REST API](https://developers.pinterest.com/docs/getting-started/introduction/).  
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'pinterest'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install pinterest
+This gem uses Faraday and Hashie to make requests and parse the responses.
 
 ## Usage
 
-TODO: Write usage instructions here
+Obtain an access token from Pinterest. You can generate one [here](https://developers.pinterest.com/docs/api/access_token/).
 
-## Development
+$ gem install pinterest
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+require 'pinterest'
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+client = Pinterest::Client.new(ACCESS_TOKEN)
+
+# Get the authenticated user's Pinterest account info
+client.get('me/')
+
+# Get the pins that the authenticated user likes
+client.get('me/likes/')
+
+# Get the authenticated user's followers
+client.get('me/followers/')
+
+# Get the boards that the authenticated user follows
+client.get('me/following/boards/')
+
+# Get the Pinterest users that the authenticated user follows
+client.get('me/following/users/')
+
+# Get the interests that the authenticated user follows
+client.get('me/following/interests/')
+
+# Follow a user
+client.post('me/following/users/', {user: 'shopseen'})
+
+# Unfollow a user
+client.delete('me/following/users/shopseen/')
+
+# Follow a board
+client.post('me/following/boards/', {board: '<board_id>'})
+
+# Unfollow a board
+client.delete('me/following/boards/<board_id>/')
+
+# Follow an interest
+client.post('me/following/interests/', {interest: '<interest_id>'})
+
+# Unfollow an interest
+client.delete('me/following/interests/<interest_id>/')
+
+# Search for authenticated users's pins related to shoes
+client.get('me/search/pins/', query: 'shoes')
+
+# Search for authenticated users's boards related to shoes
+client.get('me/search/boards/', query: 'shoes')
+
+# Get the account info for a Pinterest user
+client.get('users/<username>/')
+
+```
+
+The gem is currently under active development. Use at your own risk. See Known Issues below.  
+I hope to have the gem ready for production shortly. See Contributing section below to help.  
+
+## Known Issues
+
+* PATCH requests not working, endpoint path is not being appended to base
+
+## TODO
+
+* Pagination
+* OAuth
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pinterest.
+Bug reports and pull requests are welcome on GitHub at https://github.com/realadeel/pinterest.  
+Please provide a failing test for bug reports, and a passing test for pull requests.
