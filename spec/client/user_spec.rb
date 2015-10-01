@@ -7,12 +7,24 @@ describe "Pinterest::Client::User" do
   end
 
   describe 'GET /v1/me/' do
-    it 'should get the user object' do
-      VCR.use_cassette("v1_me") do
-        response = @client.get('me/')
-        expect(response.data.first_name).to eq('Adeel')
-        expect(response.data.last_name).to eq('Ahmad')
-        expect(response.data.keys).to match_array(['id', 'url', 'first_name', 'last_name'])
+    context "with trailing slash" do
+      it 'should get the user object' do
+        VCR.use_cassette("v1_me") do
+          response = @client.get('me/')
+          expect(response.data.first_name).to eq('Adeel')
+          expect(response.data.last_name).to eq('Ahmad')
+          expect(response.data.keys).to match_array(['id', 'url', 'first_name', 'last_name'])
+        end
+      end
+    end
+    context "without trailing slash" do
+      it 'should get the user object' do
+        VCR.use_cassette("v1_me") do
+          response = @client.get('me')
+          expect(response.data.first_name).to eq('Adeel')
+          expect(response.data.last_name).to eq('Ahmad')
+          expect(response.data.keys).to match_array(['id', 'url', 'first_name', 'last_name'])
+        end
       end
     end
   end
@@ -20,7 +32,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/me/likes/' do
     it "should get the user's likes" do
       VCR.use_cassette("v1_me_likes") do
-        response = @client.get('me/likes/')
+        response = @client.get('me', 'likes')
         expect(response.data.class).to eq(Array)
         expect(response.data.first.keys).to match_array(['id', 'link', 'note', 'url'])
       end
@@ -30,7 +42,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/users/shopseen' do
     it "should fetch a single user" do
       VCR.use_cassette("v1_user") do
-        response = @client.get('users/shopseen/')
+        response = @client.get('user', 'shopseen')
         expect(response.data.first_name).to eq('Shopseen')
         expect(response.data.last_name).to eq('')
         expect(response.data.keys).to match_array(['id', 'url', 'first_name', 'last_name'])
@@ -41,7 +53,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/me/search/pins' do
     it "should search the user's pins" do
       VCR.use_cassette("v1_me_search_pins") do
-        response = @client.get('me/search/pins/', {query: 'misophonia'})
+        response = @client.search('me', 'pins', query: 'misophonia')
         expect(response.data.class).to eq(Array)
       end
     end
@@ -50,7 +62,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/me/search/boards' do
     it "should search the user's boards" do
       VCR.use_cassette("v1_me_search_boards") do
-        response = @client.get('me/search/boards/', {query: 'randumb'})
+        response = @client.search('me', 'boards', query: 'randumb')
         expect(response.data.class).to eq(Array)
       end
     end
@@ -59,7 +71,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/me/followers' do
     it "should get the user's followers" do
       VCR.use_cassette("v1_me_followers") do
-        response = @client.get('me/followers/')
+        response = @client.get('me', 'followers')
         expect(response.data.class).to eq(Array)
       end
     end
@@ -68,7 +80,7 @@ describe "Pinterest::Client::User" do
   describe 'GET /v1/me/following/boards' do
     it "should get boards the user is following" do
       VCR.use_cassette("v1_me_following_boards") do
-        response = @client.get('me/following/boards/')
+        response = @client.get('me', 'following', 'boards')
         expect(response.data.class).to eq(Array)
       end
     end

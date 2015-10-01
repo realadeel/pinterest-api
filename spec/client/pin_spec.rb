@@ -6,39 +6,11 @@ describe "Pinterest::Client::Pin" do
     @client = Pinterest::Client.new(ENV['ACCESS_TOKEN'])
   end
 
-  describe 'GET /v1/pins/<pin_id>/' do
-    context "the pin exists" do
-      it "should get the pin" do
-        VCR.use_cassette("v1_pin") do
-          response = @client.get('pins/154177987217226202/')
-          expect(response.data.keys).to match_array(['id', 'link', 'note', 'url'])
-        end
-      end
-    end
-    context "the pin does not exist" do
-      it "should respond with an error" do
-        VCR.use_cassette("v1_no_pin") do
-          response = @client.get('pins/123/')
-          expect(response.message).to be
-        end
-      end
-    end
-  end
-
-  describe 'GET /v1/boards/<board_id>/pins/' do
-    it "should get the board's pins" do
-      VCR.use_cassette("v1_boards_pins") do
-        response = @client.get('boards/259308959733676461/pins/')
-        expect(response.data.class).to eq(Array)
-      end
-    end
-  end
-
   describe 'POST /v1/pins/' do
     context "have the parameters for a pin" do
       it "should create a pin" do
         VCR.use_cassette("v1_create_pin") do
-          response = @client.post('pins/', {
+          response = @client.create_pin({
             board: '154178055932271277',
             note: 'Test from Ruby gem',
             link: 'https://www.shopseen.com',
@@ -54,7 +26,7 @@ describe "Pinterest::Client::Pin" do
     context "missing image for a pin" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_create_pin") do
-          response = @client.post('pins/', {
+          response = @client.create_pin({
             board: '154178055932271277',
             note: 'Test from Ruby gem',
             link: 'https://www.shopseen.com',
@@ -69,7 +41,7 @@ describe "Pinterest::Client::Pin" do
     context "have the parameters for a pin" do
       it "should update a pin" do
         VCR.use_cassette("v1_update_pin") do
-          response = @client.patch('pins/', {
+          response = @client.update_pin({
             id: '154177987221063071',
             note: "Test from Ruby gem at #{Time.now.to_s}",
             log: true
@@ -81,7 +53,7 @@ describe "Pinterest::Client::Pin" do
     context "missing image for a pin" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_update_pin") do
-          response = @client.patch('pins/', {
+          response = @client.update_pin({
             id: '123',
             note: "Test from Ruby gem at #{Time.now.to_s}",
             log: true
@@ -93,11 +65,30 @@ describe "Pinterest::Client::Pin" do
 
   end
 
+  describe 'GET /v1/pins/<pin_id>/' do
+    context "the pin exists" do
+      it "should get the pin" do
+        VCR.use_cassette("v1_pin") do
+          response = @client.get_pin('154177987217226202')
+          expect(response.data.keys).to match_array(['id', 'link', 'note', 'url'])
+        end
+      end
+    end
+    context "the pin does not exist" do
+      it "should respond with an error" do
+        VCR.use_cassette("v1_no_pin") do
+          response = @client.get_pin('123')
+          expect(response.message).to be
+        end
+      end
+    end
+  end
+
   describe 'DELETE /v1/pins/<pin_id>/' do
     context "the pin exists" do
       it "should delete a pin" do
         VCR.use_cassette("v1_delete_pin") do
-          response = @client.delete('pins/154177987221063118/')
+          response = @client.delete_pin('154177987221063118')
           expect(response).to have_key(:data)
           expect(response.data).to be_falsey
           # TODO use response code
@@ -111,7 +102,7 @@ describe "Pinterest::Client::Pin" do
     context "the pin does not exist" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_delete_pin") do
-          response = @client.delete('pins/123/')
+          response = @client.delete_pin('123')
           expect(response.message).to be
         end
       end

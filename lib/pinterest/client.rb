@@ -6,6 +6,10 @@ require 'pinterest/client/board'
 module Pinterest
   class Client
 
+    include Pinterest::Client::User
+    include Pinterest::Client::Pin
+    include Pinterest::Client::Board
+
     BASE_ENDPOINT = 'https://api.pinterest.com/v1/'.freeze
     DEFAULT_USER_AGENT = "Pinterest Ruby Gem #{Pinterest::VERSION}".freeze
     DEFAULT_ADAPTER = Faraday.default_adapter
@@ -41,6 +45,7 @@ module Pinterest
     def request(method, path, options)
       raw = options.delete(:raw)
       log = options.delete(:log)
+      path = File.join(path, '')
       response = connection(raw, log).send(method) do |request|
         case method
         when :get
@@ -82,10 +87,6 @@ module Pinterest
 
     def adapter
       DEFAULT_ADAPTER
-    end
-
-    def access_token
-      @access_token
     end
 
   end
