@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'pinterest/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "pinterest"
+  spec.name          = "pinterest-api"
   spec.version       = Pinterest::VERSION
   spec.authors       = ["Adeel Ahmad"]
   spec.email         = ["adeel.rb@gmail.com"]

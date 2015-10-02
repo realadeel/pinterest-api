@@ -13,7 +13,7 @@ Obtain an access token from Pinterest. You can generate one [here](https://devel
 $ gem install pinterest
 
 ```ruby
-require 'pinterest'
+require 'pinterest-api'
 
 client = Pinterest::Client.new(ACCESS_TOKEN)
 
