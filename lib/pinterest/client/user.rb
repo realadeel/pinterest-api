@@ -2,28 +2,32 @@ module Pinterest
   class Client
     module User
 
-      def me
-        get('me')
+      def me(options={})
+        get('me', options)
       end
 
-      def get_followers
-        get("me/followers")
+      def get_followers(options={})
+        get("me/followers", options)
       end
 
-      def get_likes
-        get("me/likes")
+      def get_likes(options={})
+        get("me/likes", options)
       end
 
-      def get_followed_boards
-        get("me/following/boards")
+      def get_boards(options={})
+        get("me/boards", options)
       end
 
-      def get_followed_users
-        get("me/following/users")
+      def get_followed_boards(options={})
+        get("me/following/boards", options)
       end
 
-      def get_followed_interests
-        get("me/following/interests")
+      def get_followed_users(options={})
+        get("me/following/users", options)
+      end
+
+      def get_followed_interests(options={})
+        get("me/following/interests", options)
       end
 
       def follow_user(user)
@@ -50,16 +54,16 @@ module Pinterest
         delete("me/following/interests/#{interest_id}")
       end
 
-      def search_pins(params={})
-        get('me/search/pins', query: params[:query])
+      def search_pins(options={})
+        get('me/search/pins', options)
       end
 
-      def search_boards(params={})
-        get('me/search/boards', query: params[:query])
+      def search_boards(options={})
+        get('me/search/boards', options)
       end
 
-      def get_user(user)
-        get("users/#{user}")
+      def get_user(user, options={})
+        get("users/#{user}", options)
       end
 
     end
