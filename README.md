@@ -65,11 +65,9 @@ client.get_user('<username>')
 
 ```
 
-The gem is currently under active development. Use at your own risk. See Known Issues below.  
-I hope to have the gem ready for production shortly. See Contributing section below to help.  
-
 ## Known Issues
 
+The gem is currently under active development.  
 * PATCH requests not working, endpoint path is not being appended to base
 
 ## TODO
