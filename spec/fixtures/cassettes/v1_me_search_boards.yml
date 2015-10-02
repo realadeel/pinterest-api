@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 03:47:23 GMT
+      - Fri, 02 Oct 2015 22:49:30 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -41,22 +41,20 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '244220755538'
+      - '542920295821'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '965'
+      - '983'
       X-Varnish:
-      - '3678267586'
+      - '2180849613'
       Content-Length:
-      - '468'
+      - '52'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data": [{"url": "https://www.pinterest.com/_adeel/randumb/", "id":
-        "154178055932271277", "name": "randumb"}], "page": {"cursor": "b28yNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw",
-        "next": "https://api.pinterest.com/v1/me/search/boards/?access_token=<HIDDEN>&query=randumb&cursor=b28yNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw"}}'
+      string: '{"data": [], "page": {"cursor": null, "next": null}}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 03:47:23 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:30 GMT
 recorded_with: VCR 2.9.3

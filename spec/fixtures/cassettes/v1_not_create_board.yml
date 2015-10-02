@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Authorization:
       - BEARER <HIDDEN>
       Content-Type:
@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 04:00:56 GMT
+      - Fri, 02 Oct 2015 22:49:22 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -45,13 +45,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '804145485937'
+      - '824362841785'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '946'
+      - '998'
       X-Varnish:
-      - '3680237705'
+      - '2681435367'
       Content-Length:
       - '76'
       Connection:
@@ -61,5 +61,5 @@ http_interactions:
       string: '{"message": "Parameter ''name'' is required.", "type": "api", "param":
         "name"}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:00:56 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:22 GMT
 recorded_with: VCR 2.9.3

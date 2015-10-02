@@ -10,13 +10,13 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: NOT FOUND
     headers:
       Accept-Ranges:
       - bytes
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 04:01:15 GMT
+      - Fri, 02 Oct 2015 22:49:22 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -41,21 +41,20 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '965703880229'
+      - '329529189566'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '945'
+      - '997'
       X-Varnish:
-      - '435635154'
+      - '769907361'
       Content-Length:
-      - '123'
+      - '46'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data": {"url": "https://www.pinterest.com/_adeel/test-298680641/",
-        "id": "154178055932402867", "name": "Test 298680641"}}'
+      string: '{"message": "Board not found.", "type": "api"}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:01:15 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:22 GMT
 recorded_with: VCR 2.9.3

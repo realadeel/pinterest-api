@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Authorization:
       - BEARER <HIDDEN>
       Content-Type:
@@ -19,8 +19,8 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 400
-      message: BAD REQUEST
+      code: 401
+      message: UNAUTHORIZED
     headers:
       Accept-Ranges:
       - bytes
@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 03:52:35 GMT
+      - Fri, 02 Oct 2015 22:49:25 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -45,21 +45,21 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '966531693804'
+      - '745066041447'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '951'
+      - '993'
       X-Varnish:
-      - '434400134'
+      - '3584036789'
       Content-Length:
-      - '94'
+      - '75'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"message": "You need to upload an image or provide the ''image_url''
-        parameter", "type": "api"}'
+      string: '{"message": "You don''t have permission to edit that board.", "type":
+        "api"}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 03:52:35 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:25 GMT
 recorded_with: VCR 2.9.3

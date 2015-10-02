@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 03:47:28 GMT
+      - Fri, 02 Oct 2015 22:49:30 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -41,28 +41,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '659481958351'
+      - '570809843684'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '963'
+      - '981'
       X-Varnish:
-      - '643141037'
+      - '560313692'
       Content-Length:
-      - '831'
+      - '152'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data": [{"url": "https://www.pinterest.com/klinear/monterey-ca/",
-        "id": "396387273391974974", "name": "Monterey, CA"}, {"url": "https://www.pinterest.com/elmorel08/mft/",
-        "id": "9922130368110354", "name": "MFT"}, {"url": "https://www.pinterest.com/MrsCHanson/life-with-misophonia/",
-        "id": "114349346727734173", "name": "Life with Misophonia"}, {"url": "https://www.pinterest.com/sharp/bad-ux/",
-        "id": "633456136555899", "name": "Bad UX"}, {"url": "https://www.pinterest.com/sharp/great-ux/",
-        "id": "633456136552456", "name": "Great UX"}, {"url": "https://www.pinterest.com/sonyelectronics/retro-sony-products/",
-        "id": "117586308959840703", "name": "Retro Sony Products"}, {"url": "https://www.pinterest.com/fluffyco/fluffyco-stuff/",
-        "id": "259308959733698480", "name": "FluffyCo Stuff"}], "page": {"cursor":
-        null, "next": null}}'
+      string: '{"data": [{"url": "https://www.pinterest.com/janew/delicious/", "id":
+        "2814887206060038", "name": "Delicious"}], "page": {"cursor": null, "next":
+        null}}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 03:47:28 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:30 GMT
 recorded_with: VCR 2.9.3

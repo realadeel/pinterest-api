@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 03:47:35 GMT
+      - Fri, 02 Oct 2015 22:49:31 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -41,21 +41,21 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '751760495084'
+      - '984066133647'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '961'
+      - '979'
       X-Varnish:
-      - '115248656'
+      - '2080799018'
       Content-Length:
-      - '105'
+      - '98'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data": [{"id": "901179409185", "name": "Modern Architecture"}], "page":
+      string: '{"data": [{"id": "924826655308", "name": "Tattoo Ideas"}], "page":
         {"cursor": null, "next": null}}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 03:47:35 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:31 GMT
 recorded_with: VCR 2.9.3

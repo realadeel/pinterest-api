@@ -5,12 +5,12 @@ http_interactions:
     uri: https://api.pinterest.com/v1/boards/
     body:
       encoding: UTF-8
-      string: description=Test+from+Ruby+gem&name=Test+298680641
+      string: description=Test+from+Ruby+gem&name=Test+942608276
     headers:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Authorization:
       - BEARER <HIDDEN>
       Content-Type:
@@ -33,7 +33,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 04:00:51 GMT
+      - Fri, 02 Oct 2015 22:49:21 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -45,21 +45,21 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '676778744475'
+      - '714377078615'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '947'
+      - '999'
       X-Varnish:
-      - '750014567'
+      - '875003366'
       Content-Length:
-      - '123'
+      - '126'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"data": {"url": "https://www.pinterest.com/_adeel/test-298680641/",
-        "id": "154178055932402867", "name": "Test 298680641"}}'
+      string: '{"data": {"url": "https://www.pinterest.com/jrrhoades/test-942608276/",
+        "id": "180636703743184691", "name": "Test 942608276"}}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:00:51 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:21 GMT
 recorded_with: VCR 2.9.3
