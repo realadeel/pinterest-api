@@ -1,6 +1,6 @@
 # Pinterest
 
-[![Code Climate](https://codeclimate.com/github/realadeel/pinterest-api/badges/gpa.svg)](https://codeclimate.com/github/realadeel/pinterest-api)  
+[![Code Climate](https://codeclimate.com/github/realadeel/pinterest-api/badges/gpa.svg)](https://codeclimate.com/github/realadeel/pinterest-api)
 [![Build Status](https://semaphoreci.com/api/v1/projects/17e4870c-9339-42e9-b2a1-8a7ca1d02bc2/558393/badge.svg)](https://semaphoreci.com/realdeal/pinterest-api)
 
 This is the Ruby gem for interacting with the official [Pinterest REST API](https://developers.pinterest.com/docs/getting-started/introduction/).  
