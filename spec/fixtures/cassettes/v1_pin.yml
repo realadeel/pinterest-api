@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/pins/154177987221106992/?access_token=<HIDDEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 04:02:57 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '651637321136'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '938'
+      X-Varnish:
+      - '1329790582'
+      Content-Length:
+      - '270'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"data": {"url": "http://pinterest.com/pin/154177987221106992/", "note":
+        "Test from Ruby gem", "link": "https://www.pinterest.com/r/pin/154177987221106992/4779055074072594921/8beaece68be423a1f5bf4b6016b6c9a68dfa706ce9dc790fd24053ec9372426b",
+        "id": "154177987221106992"}}'
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 04:02:57 GMT
+recorded_with: VCR 2.9.3

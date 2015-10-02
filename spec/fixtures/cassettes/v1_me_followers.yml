@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/me/followers/?access_token=<HIDDEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 03:47:26 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '787042891164'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '964'
+      X-Varnish:
+      - '1586290907'
+      Content-Length:
+      - '1159'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": [{"url": "https://www.pinterest.com/rowonebrand/", "first_name":
+        "Row One Brand", "last_name": "", "id": "480407622659389821"}, {"url": "https://www.pinterest.com/scherrerjustin/",
+        "first_name": "justin", "last_name": "scherrer", "id": "334462847234926584"},
+        {"url": "https://www.pinterest.com/saminadaredia/", "first_name": "Samina",
+        "last_name": "Daredia", "id": "327988922770577366"}, {"url": "https://www.pinterest.com/erikabrandwein/",
+        "first_name": "Erika", "last_name": "Brandwein", "id": "427982908247034816"},
+        {"url": "https://www.pinterest.com/annawronsky/", "first_name": "Anna", "last_name":
+        "Wronsky", "id": "412642522016298857"}, {"url": "https://www.pinterest.com/rufusputnam/",
+        "first_name": "Putnam & Speedwell", "last_name": "", "id": "469993048521068475"},
+        {"url": "https://www.pinterest.com/nicholassolter/", "first_name": "Nicholas",
+        "last_name": "Solter", "id": "457537780801634332"}, {"url": "https://www.pinterest.com/jordan_enright/",
+        "first_name": "Jordan", "last_name": "Enright-Schulz", "id": "109986553308119341"},
+        {"url": "https://www.pinterest.com/abbywilson986/", "first_name": "Abby",
+        "last_name": "Wilson", "id": "364651038487125071"}, {"url": "https://www.pinterest.com/amyjbeaudoin/",
+        "first_name": "Amy", "last_name": "Beaudoin", "id": "289989800914622921"},
+        {"url": "https://www.pinterest.com/knitnkaboodle/", "first_name": "Knit ''n
+        Kaboodle", "last_name": "", "id": "147141250233925653"}, {"url": "https://www.pinterest.com/jtarchie/",
+        "first_name": "JT", "last_name": "Archie", "id": "342695990303692100"}, {"url":
+        "https://www.pinterest.com/kathrinsane/", "first_name": "KathrIn", "last_name":
+        "Sane", "id": "388998623972604046"}, {"url": "https://www.pinterest.com/rahmalconda/",
+        "first_name": "Rahmal", "last_name": "Conda", "id": "401172416715301559"},
+        {"url": "https://www.pinterest.com/gentrylin/", "first_name": "Gentry", "last_name":
+        "Lin Owens", "id": "502503408331152485"}, {"url": "https://www.pinterest.com/blok1384/",
+        "first_name": "Irina", "last_name": "Blok", "id": "343118202768743682"}, {"url":
+        "https://www.pinterest.com/a2patel/", "first_name": "Ash", "last_name": "Patel",
+        "id": "348958808535481991"}, {"url": "https://www.pinterest.com/modelsavings/",
+        "first_name": "Model Savings Blog", "last_name": "", "id": "472878167032340897"},
+        {"url": "https://www.pinterest.com/rjacoby/", "first_name": "Rafi", "last_name":
+        "Jacoby", "id": "113153146796115490"}, {"url": "https://www.pinterest.com/driverasf2/",
+        "first_name": "David", "last_name": "Rivera", "id": "23362629225417553"},
+        {"url": "https://www.pinterest.com/alejandrasabill/", "first_name": "Alejandra",
+        "last_name": "Sabillon", "id": "314478123888424414"}, {"url": "https://www.pinterest.com/aakashhdesai/",
+        "first_name": "Aakash Desai", "last_name": "", "id": "98164604286276438"},
+        {"url": "https://www.pinterest.com/gsbanerj/", "first_name": "Gautam", "last_name":
+        "Banerjee", "id": "428405120712061412"}, {"url": "https://www.pinterest.com/embodyclothing/",
+        "first_name": "Embody Clothing & Accessories", "last_name": "", "id": "360991863789853331"}],
+        "page": {"cursor": "PyEyNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw",
+        "next": "https://api.pinterest.com/v1/me/followers/?access_token=<HIDDEN>&cursor=PyEyNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw"}}'
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 03:47:26 GMT
+recorded_with: VCR 2.9.3

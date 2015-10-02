@@ -15,4 +15,7 @@ VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures/cassettes"
   c.hook_into :webmock
   c.default_cassette_options = { record: :once }
+  c.filter_sensitive_data('<HIDDEN>') do |interaction|
+    ENV['ACCESS_TOKEN']
+  end
 end

@@ -42,9 +42,8 @@ describe "Pinterest::Client::Pin" do
       it "should update a pin" do
         VCR.use_cassette("v1_update_pin") do
           response = @client.update_pin({
-            id: '154177987221063071',
-            note: "Test from Ruby gem at #{Time.now.to_s}",
-            log: true
+            id: '154177987221106968',
+            note: "Test from Ruby gem at #{Time.now.to_s}"
           })
           expect(response.data.id).to be
         end
@@ -55,8 +54,7 @@ describe "Pinterest::Client::Pin" do
         VCR.use_cassette("v1_not_update_pin") do
           response = @client.update_pin({
             id: '123',
-            note: "Test from Ruby gem at #{Time.now.to_s}",
-            log: true
+            note: "Test from Ruby gem at #{Time.now.to_s}"
           })
           expect(response.message).to be
         end
@@ -69,7 +67,7 @@ describe "Pinterest::Client::Pin" do
     context "the pin exists" do
       it "should get the pin" do
         VCR.use_cassette("v1_pin") do
-          response = @client.get_pin('154177987217226202')
+          response = @client.get_pin('154177987221106992')
           expect(response.data.keys).to match_array(['id', 'link', 'note', 'url'])
         end
       end
@@ -84,11 +82,20 @@ describe "Pinterest::Client::Pin" do
     end
   end
 
+  describe 'GET /v1/boards/<board_id>/pins/' do
+    it "should get the board's pins" do
+      VCR.use_cassette("v1_boards_pins") do
+        response = @client.get_board_pins('154178055932402553')
+        expect(response.data.class).to eq(Array)
+      end
+    end
+  end
+
   describe 'DELETE /v1/pins/<pin_id>/' do
     context "the pin exists" do
       it "should delete a pin" do
         VCR.use_cassette("v1_delete_pin") do
-          response = @client.delete_pin('154177987221063118')
+          response = @client.delete_pin('154177987221106882')
           expect(response).to have_key(:data)
           expect(response.data).to be_falsey
           # TODO use response code

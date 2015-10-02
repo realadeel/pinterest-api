@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://api.pinterest.com/v1/
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: NOT FOUND
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 04:01:37 GMT
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Pinterest-Rid:
+      - '879980044349'
+      X-Varnish:
+      - '1588347601'
+      Content-Length:
+      - '51'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "404: Not Found",
+          "type": "http"
+        }
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 04:01:37 GMT
+recorded_with: VCR 2.9.3

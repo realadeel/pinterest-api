@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/me/search/pins/?access_token=<HIDDEN>&query=misophonia
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 03:47:20 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '458264217522'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '966'
+      X-Varnish:
+      - '638843158'
+      Content-Length:
+      - '729'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"data": [{"url": "http://pinterest.com/pin/154177987217226202/", "note":
+        "Now on Amazon! Sound-Rage: A Primer of the Neurobiology and Psychology of
+        a Little Known Anger Disorder - Misophonia.", "link": "https://www.pinterest.com/r/pin/154177987217226202/4779055074072594921/3a26f96af343f35dd139715c8e0ca53cce834031d8e7e6e5ebb44bccce69456e",
+        "id": "154177987217226202"}], "page": {"cursor": "b28yNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw",
+        "next": "https://api.pinterest.com/v1/me/search/pins/?access_token=<HIDDEN>&query=misophonia&cursor=b28yNXxmMGVmZDA5YjA5Yjk5NDIxZjgzODZjNDRkZWEzNTRhZmIyZDRjZjE3ZWY4YmRmMWE4NmVhZGQwNDg1NTNmOTAw"}}'
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 03:47:20 GMT
+recorded_with: VCR 2.9.3

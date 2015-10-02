@@ -7,24 +7,24 @@ describe "Pinterest::Client::Board" do
   end
 
   describe 'POST /v1/boards/' do
-    # create_board
     context "have the parameters for a board" do
       it "should create a board" do
+        board_name = "Test #{rand(Time.now.to_i)}"
         VCR.use_cassette("v1_create_board") do
-          response = @client.post('boards/', {
-            name: 'Test',
+          response = @client.create_board({
+            name: board_name,
             description: 'Test from Ruby gem',
           })
           expect(response.data.id).to be
           expect(response.data.url).to be
-          expect(response.data.name).to eq('Test')
+          expect(response.data.name).to include('Test ')
         end
       end
     end
     context "missing name of a board" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_create_board") do
-          response = @client.post('boards/', {
+          response = @client.create_board({
             description: 'Test from Ruby gem',
           })
           expect(response.message).to be
@@ -34,19 +34,18 @@ describe "Pinterest::Client::Board" do
   end
 
   describe 'GET /v1/boards/<board_id>/' do
-    # get_board(id)
     context "the board exists" do
       it "should get the board" do
         VCR.use_cassette("v1_board") do
-          response = @client.get('boards/154177987217226202/')
-          expect(response.data.keys).to match_array(['id', 'link', 'note', 'url'])
+          response = @client.get_board('154178055932402867/')
+          expect(response.data.keys).to match_array(['id', 'name', 'url'])
         end
       end
     end
     context "the board does not exist" do
       it "should respond with an error" do
         VCR.use_cassette("v1_no_board") do
-          response = @client.get('boards/123/')
+          response = @client.get_board('123')
           expect(response.message).to be
         end
       end
@@ -54,11 +53,10 @@ describe "Pinterest::Client::Board" do
   end
 
   describe 'DELETE /v1/boards/<board_id>/' do
-    # delete_board
     context "the board exists" do
       it "should delete a board" do
         VCR.use_cassette("v1_delete_board") do
-          response = @client.delete('boards/154178055932401495/')
+          response = @client.delete_board('154178055932402867')
           expect(response).to have_key(:data)
           expect(response.data).to be_falsey
           # TODO use response code
@@ -72,7 +70,7 @@ describe "Pinterest::Client::Board" do
     context "the board does not exist" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_delete_board") do
-          response = @client.delete('boards/1/')
+          response = @client.delete_board('1')
           expect(response.message).to be
         end
       end

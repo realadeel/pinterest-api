@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/me/likes/?access_token=<HIDDEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 03:47:13 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '115349066278'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '968'
+      X-Varnish:
+      - '809536423'
+      Content-Length:
+      - '1053'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": [{"url": "http://pinterest.com/pin/520025088201864475/", "note":
+        ".", "link": "https://www.pinterest.com/r/pin/520025088201864475/4779055074072594921/66868305830b00b3ca5bf13940522eb02f75ce633add7bdbd68eccfaeb064e7c",
+        "id": "520025088201864475"}, {"url": "http://pinterest.com/pin/337840409523517605/",
+        "note": "Minimal Black Onyx Crystal Ball Ring $59 via @shopseen", "link":
+        "https://www.pinterest.com/r/pin/337840409523517605/4779055074072594921/8e09af4931d40e1fa5623c4f520d7fe26a266ff20ca1c1032b60574352823836",
+        "id": "337840409523517605"}, {"url": "http://pinterest.com/pin/339669996868392496/",
+        "note": "Getting Started with Shopseen. https://www.shopseen.com  Shopseen
+        is the best way to manage all your products, and reach more customers, everywhere
+        you sell.  Shopseen integrates with Etsy, Shopify, eBay, Bigcommerce, and
+        Storenvy to let you publish to multiple stores. All your inventory is kept
+        in sync when something sells.  Shopseen also integrates with Pinterest, Twitter,
+        Facebook, Tumblr, and Google+ to let you easily share your products with a
+        link back to buy. You can even ...", "link": "https://www.pinterest.com/r/pin/339669996868392496/4779055074072594921/ed97ac8362ec6c08fb82b23f47ac864fce30d445451aba49f47daa2180a43787",
+        "id": "339669996868392496"}, {"url": "http://pinterest.com/pin/153966880984607495/",
+        "note": "Back to basics guide to boosting @Etsy sales", "link": "https://www.pinterest.com/r/pin/153966880984607495/4779055074072594921/6b1bcf1eaafc0c069818ee971252759e807dc1498ec5fdc91cdaddfee6801ae9",
+        "id": "153966880984607495"}, {"url": "http://pinterest.com/pin/339669996866716139/",
+        "note": "Over 500 businesses are now on Shopseen with 50,000 products. Manage
+        your products, everywhere you sell https://www.shopseen.com", "link": "https://www.pinterest.com/r/pin/339669996866716139/4779055074072594921/c890286e1403a16667bc04211a90f456b9ad0d51d4ba5016776e6cfc78b84614",
+        "id": "339669996866716139"}, {"url": "http://pinterest.com/pin/339669996865795554/",
+        "note": "Storyboard #shopseen #video", "link": "", "id": "339669996865795554"},
+        {"url": "http://pinterest.com/pin/259308891016940981/", "note": "Mountain
+        Tee", "link": "https://www.pinterest.com/r/pin/259308891016940981/4779055074072594921/82ced276cf437875a88fc74139b0388ba96da0d2ce2e6a89354196c48be7d15a",
+        "id": "259308891016940981"}, {"url": "http://pinterest.com/pin/531917405958652868/",
+        "note": "Vegan chocolate chip banana bread with sliced almonds", "link": "",
+        "id": "531917405958652868"}], "page": {"cursor": null, "next": null}}'
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 03:47:13 GMT
+recorded_with: VCR 2.9.3

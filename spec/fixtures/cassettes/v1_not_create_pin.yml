@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pinterest.com/v1/pins/
+    body:
+      encoding: UTF-8
+      string: board=154178055932271277&link=https%3A%2F%2Fwww.shopseen.com&note=Test+from+Ruby+gem
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Authorization:
+      - BEARER <HIDDEN>
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: BAD REQUEST
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 03:52:35 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '966531693804'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '951'
+      X-Varnish:
+      - '434400134'
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message": "You need to upload an image or provide the ''image_url''
+        parameter", "type": "api"}'
+    http_version: 
+  recorded_at: Fri, 02 Oct 2015 03:52:35 GMT
+recorded_with: VCR 2.9.3
