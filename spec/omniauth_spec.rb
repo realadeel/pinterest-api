@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "Pinterest::Omniauth" do
+describe "Omniauth::Strategies::Pinterest" do
   context 'client options' do
     before :each do
-      @auth = Pinterest::Omniauth.new({})
+      @auth = OmniAuth::Strategies::Pinterest.new({})
     end
 
     it 'should call correct base url' do
