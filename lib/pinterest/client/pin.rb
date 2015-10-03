@@ -2,12 +2,12 @@ module Pinterest
   class Client
     module Pin
 
-      def get_pin(id)
-        get("pins/#{id}")
+      def get_pin(id, options={})
+        get("pins/#{id}", options)
       end
 
-      def get_board_pins(board_id)
-        get("boards/#{board_id}/pins")
+      def get_board_pins(board_id, options={})
+        get("boards/#{board_id}/pins", options)
       end
 
       def create_pin(params={})

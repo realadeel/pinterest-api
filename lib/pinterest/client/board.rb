@@ -2,8 +2,8 @@ module Pinterest
   class Client
     module Board
 
-      def get_board(id)
-        get("boards/#{id}")
+      def get_board(id, options={})
+        get("boards/#{id}", options)
       end
 
       def create_board(params={})
