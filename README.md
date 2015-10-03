@@ -65,6 +65,31 @@ client.get_user('<username>')
 
 ```
 
+## Authentication
+
+You can generate access tokens through the link above, or you can use OAuth
+Authentication  
+
+In your app, make sure you have the omniauth gem installed. Add the following
+to your ```intializers/omniauth.rb``` file  
+
+```ruby
+
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :pinterest, ENV['PINTEREST_APP_ID'], ENV['PINTEREST_APP_SECRET']
+end
+
+```
+
+Direct your users to ```/auth/pinterest```
+
+Once they approve your app, they'll be redirect to your callback URL, which
+should be something like ```auth/pinterest/callback``` with a hash of
+OAuth values from Pinterest in ```request.env['omniauth.auth']```
+
+For more details, check out "Integrating OmniAuth Into Your Application"  
+https://github.com/intridea/omniauth
+
 ## Known Issues
 
 The gem is currently under active development.  

@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Ruby gem to interact with the Pinterest REST API}
   spec.description   = %q{This gem makes it simple to interact with the official Pinterest REST API}
-  spec.homepage      = "http://github.com/realadeel"
+  spec.homepage      = "http://github.com/realadeel/pinterest-api"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -24,8 +24,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.3"
   spec.add_development_dependency "vcr", "~> 2.9"
   spec.add_development_dependency "dotenv", "~> 2.0"
+  spec.add_development_dependency "webmock", "~> 1.0"
 
   spec.add_dependency 'faraday', "~> 0.9"
-  spec.add_dependency 'faraday_middleware', ">= 0.9.0"
+  spec.add_dependency 'faraday_middleware', "~> 0.9"
   spec.add_dependency 'hashie', "~> 3.0"
+  spec.add_dependency 'omniauth', '~> 1.0'
+  spec.add_dependency 'omniauth-oauth2', '~> 1.0'
 end
