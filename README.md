@@ -80,7 +80,7 @@ end
 
 ```
 
-Direct your users to ```auth/pinterest```
+Direct your users to ```/auth/pinterest```
 
 Once they approve your app, they'll be redirect to your callback URL, which
 should be something like ```auth/pinterest/callback``` with a hash of
