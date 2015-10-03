@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Authorization:
       - BEARER <HIDDEN>
       Accept-Encoding:
@@ -31,7 +31,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 03:59:13 GMT
+      - Fri, 02 Oct 2015 22:49:27 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -43,13 +43,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '488271449477'
+      - '200518808849'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '949'
+      - '988'
       X-Varnish:
-      - '3459255773'
+      - '3900696568'
       Content-Length:
       - '44'
       Connection:
@@ -58,5 +58,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message": "Pin not found.", "type": "api"}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 03:59:13 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:27 GMT
 recorded_with: VCR 2.9.3

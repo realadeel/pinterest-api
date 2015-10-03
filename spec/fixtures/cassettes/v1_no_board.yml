@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 04:01:18 GMT
+      - Fri, 02 Oct 2015 22:49:23 GMT
       Pinterest-Generated-By:
       - None
       Pinterest-Version:
@@ -41,13 +41,13 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '793531419135'
+      - '571919320929'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '944'
+      - '996'
       X-Varnish:
-      - '645143610'
+      - '2180832199'
       Content-Length:
       - '46'
       Connection:
@@ -56,5 +56,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"message": "Board not found.", "type": "api"}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:01:18 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:23 GMT
 recorded_with: VCR 2.9.3

@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
+      - Pinterest Ruby Gem 0.1.1
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -29,15 +29,15 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 02 Oct 2015 04:00:18 GMT
+      - Fri, 02 Oct 2015 22:49:25 GMT
       Server:
       - nginx
       Via:
       - 1.1 varnish
       X-Pinterest-Rid:
-      - '663068971330'
+      - '138607432579'
       X-Varnish:
-      - '63892550'
+      - '2501355266'
       Content-Length:
       - '51'
       Connection:
@@ -50,5 +50,5 @@ http_interactions:
           "type": "http"
         }
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:00:18 GMT
+  recorded_at: Fri, 02 Oct 2015 22:49:25 GMT
 recorded_with: VCR 2.9.3
