@@ -98,7 +98,6 @@ The gem is currently under active development.
 ## TODO
 
 * Pagination
-* OAuth
 * document Mash response methods
 
 ## Contributing
