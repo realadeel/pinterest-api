@@ -10,6 +10,10 @@ module Pinterest
         get("me/followers", options)
       end
 
+      def get_pins(options={})
+        get("me/pins", options)
+      end
+
       def get_likes(options={})
         get("me/likes", options)
       end
