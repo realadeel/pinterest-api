@@ -54,11 +54,11 @@ module Pinterest
         delete("me/following/interests/#{interest_id}")
       end
 
-      def search_pins(options={})
+      def get_pins(options={})
         get('me/search/pins', options)
       end
 
-      def search_boards(options={})
+      def get_boards(options={})
         get('me/search/boards', options)
       end
 

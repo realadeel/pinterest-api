@@ -52,8 +52,8 @@ describe "Pinterest::Client::User" do
 
   describe 'GET /v1/me/search/pins' do
     it "should search the user's pins" do
-      VCR.use_cassette("v1_me_search_pins") do
-        response = @client.search_pins(query: 'misophonia')
+      VCR.use_cassette("v1_me_get_pins") do
+        response = @client.get_pins(query: 'shopseen')
         expect(response.data.class).to eq(Array)
       end
     end
@@ -61,8 +61,8 @@ describe "Pinterest::Client::User" do
 
   describe 'GET /v1/me/search/boards' do
     it "should search the user's boards" do
-      VCR.use_cassette("v1_me_search_boards") do
-        response = @client.search_boards(query: 'randumb')
+      VCR.use_cassette("v1_me_get_boards") do
+        response = @client.get_boards(query: 'randumb')
         expect(response.data.class).to eq(Array)
       end
     end
@@ -188,7 +188,7 @@ describe "Pinterest::Client::User" do
     context "another interest exists" do
       it "should follow the interest" do
         VCR.use_cassette("v1_me_follow_existing_interest") do
-          response = @client.follow_interest('259308959733676461')
+          response = @client.follow_interest('901179409185')
           expect(response).to have_key(:data)
           expect(response.data).to be_falsey
         end
