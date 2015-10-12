@@ -55,6 +55,12 @@ client.follow_interest(<interest_id>)
 # Unfollow an interest
 client.unfollow_interest(<interest_id>)
 
+# Get all of authenticated users's pins
+client.get_pins  
+
+# Get all of authenticated users's boards
+client.get_boards
+
 # Search for authenticated users's pins related to shoes
 client.get_pins(query: 'shoes')  
 
