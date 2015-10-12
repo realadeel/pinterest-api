@@ -10,9 +10,9 @@ This gem uses Faraday and Hashie to make requests and parse the responses.
 
 ## Usage
 
-Obtain an access token from Pinterest. You can generate one [here](https://developers.pinterest.com/docs/api/access_token/).
+Obtain an access token from Pinterest. You can generate one [here](https://developers.pinterest.com/tools/access_token/).
 
-$ gem install pinterest
+$ gem install pinterest-api
 
 ```ruby
 require 'pinterest-api'
@@ -93,13 +93,13 @@ https://github.com/intridea/omniauth
 
 ## Known Issues
 
-The gem is currently under active development.  
+The gem is currently under active development. The following issues cause the test specs to fail, though it's not clear to me that these issues are not with the Pinterest API itself.  
 * PATCH requests not working, endpoint path is not being appended to base
+* POST/DELETE requests for following/unfollowing interests respectively are not working
 
 ## TODO
 
 * Pagination
-* OAuth
 * document Mash response methods
 
 ## Contributing
