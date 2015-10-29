@@ -2,11 +2,12 @@
 
 [![Gem Version](https://badge.fury.io/rb/pinterest-api.svg)](https://badge.fury.io/rb/pinterest-api)  
 [![Code Climate](https://codeclimate.com/github/realadeel/pinterest-api/badges/gpa.svg)](https://codeclimate.com/github/realadeel/pinterest-api)
-[![Build Status](https://semaphoreci.com/api/v1/projects/17e4870c-9339-42e9-b2a1-8a7ca1d02bc2/558393/badge.svg)](https://semaphoreci.com/realdeal/pinterest-api)
 
 This is the Ruby gem for interacting with the official [Pinterest REST API](https://developers.pinterest.com/docs/getting-started/introduction/).  
 
 This gem uses Faraday and Hashie to make requests and parse the responses.
+
+Battle-tested at [Shopseen](https://www.shopseen.com) to help merchants sell more.
 
 ## Usage
 
