@@ -70,6 +70,7 @@ module Pinterest
         unless raw
           connection.use FaradayMiddleware::Mashify
         end
+        connection.use Faraday::Request::Multipart
         connection.use Faraday::Response::ParseJson
         connection.use Faraday::Request::UrlEncoded
         connection.response :logger if log

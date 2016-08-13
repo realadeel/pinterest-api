@@ -22,6 +22,21 @@ describe "Pinterest::Client::Pin" do
           expect(response.data.url).to eq("http://pinterest.com/pin/#{response.data.id}/")
         end
       end
+      context "with an image file" do
+        it "should create a pin" do
+          file_path = File.expand_path('') + "/spec/fixtures/images/test_image.png"
+          VCR.use_cassette("v1_create_pin_with_image_file") do
+            response = @client.create_pin({
+              board: '1154178055932271277',
+              note: 'Test from ruby gem',
+              link: 'https://www.shopseen.com',
+              image: Faraday::UploadIO.new(file_path, "image/png")
+            })
+            expect(response.data.keys).to match_array(
+              ['id', 'link', 'note', 'url'])
+          end
+        end
+      end
     end
     context "missing image for a pin" do
       it "should response with an error message" do
