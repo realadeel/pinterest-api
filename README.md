@@ -72,6 +72,29 @@ client.get_boards(query: 'shoes')
 client.get_user('<username>')
 
 ```
+## Creating pins
+
+You can create pins as follows
+
+```
+@client.create_pin({
+  board: '<username>/<board_name>' OR '<board_id>',
+  note: 'My note'
+  link: 'https://www.google.com',
+  image_url: 'http://marketingland.com/wp-content/ml-loads/2014/07/pinterest-logo-white-1920.png'
+})
+```
+
+You can also upload your own image file like so
+
+```
+@client.create_pin({
+  board: '1154178055932271277',
+  note: 'Test from ruby gem',
+  link: 'https://www.shopseen.com',
+  image: Faraday::UploadIO.new(your_file_path, "image/<image_type>")
+})
+```
 
 ## Authentication
 

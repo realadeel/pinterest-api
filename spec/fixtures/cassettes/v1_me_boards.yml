@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/me/boards/?access_token=<HIDDEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.2.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - 0012a03
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '478023737076'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '999'
+      Content-Length:
+      - '582'
+      Date:
+      - Sat, 13 Aug 2016 15:25:01 GMT
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"data": [{"url": "https://www.pinterest.com/jrrhoades/test-798867696/",
+        "id": "180636703743184640", "name": "Test 798867696"}, {"url": "https://www.pinterest.com/jrrhoades/test-1422106535/",
+        "id": "180636703743184641", "name": "Test 1422106535"}, {"url": "https://www.pinterest.com/jrrhoades/test-942608276/",
+        "id": "180636703743184691", "name": "Test 942608276"}, {"url": "https://www.pinterest.com/jrrhoades/test-411707160/",
+        "id": "180636703743184643", "name": "Test 411707160"}, {"url": "https://www.pinterest.com/jrrhoades/test/",
+        "id": "180636703743183933", "name": "test"}]}'
+    http_version: 
+  recorded_at: Sat, 13 Aug 2016 15:25:01 GMT
+recorded_with: VCR 2.9.3
