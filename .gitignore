@@ -9,3 +9,5 @@
 /tmp/
 .env
 *.gem
+*.swp
+*.swo

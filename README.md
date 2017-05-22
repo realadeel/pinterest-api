@@ -121,6 +121,23 @@ OAuth values from Pinterest in ```request.env['omniauth.auth']```
 For more details, check out "Integrating OmniAuth Into Your Application"  
 https://github.com/intridea/omniauth
 
+## Request options
+
+You can set any request options that are valid in `Faraday::Connection` by adding them as a has to the Pinterest Client initializer.
+
+Example:
+
+```
+  client = Pinterest::Client.new(ACCESS_TOKEN, {
+    request: {
+      timeout: 1.5,
+      open_timeout: 1,
+    }
+  })
+
+  counts = client.get_user('<username>', {fields: "counts"})
+```
+
 ## Known Issues
 
 The gem is currently under active development. The following issues cause the test specs to fail, though it's not clear to me that these issues are not with the Pinterest API itself.  
