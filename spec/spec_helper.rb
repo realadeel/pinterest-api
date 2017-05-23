@@ -6,6 +6,7 @@ require 'webmock/rspec'
 require 'dotenv'
 
 Dotenv.load
+ENV['ACCESS_TOKEN'] ||= "test"
 
 RSpec.configure do |config|
   # some (optional) config here

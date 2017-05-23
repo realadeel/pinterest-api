@@ -2,53 +2,57 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://api.pinterest.com/v1/
+    uri: https://api.pinterest.com/v1/pins/333547916137432730/
     body:
       encoding: UTF-8
-      string: ''
+      string: note=Test+from+Ruby+gem+at+2017-05-23+00%3A20%3A00+-0400&pin=333547916137432730
     headers:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Pinterest Ruby Gem 0.0.1
-      Content-Length:
-      - '0'
+      - Pinterest Ruby Gem 0.2.2
+      Authorization:
+      - BEARER <HIDDEN>
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 404
-      message: NOT FOUND
+      code: 200
+      message: OK
     headers:
-      Accept-Ranges:
-      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
       Age:
       - '0'
       Cache-Control:
       - private
       Content-Type:
       - application/json
-      Date:
-      - Fri, 02 Oct 2015 04:00:18 GMT
-      Server:
-      - nginx
-      Via:
-      - 1.1 varnish
+      Pinterest-Version:
+      - c0f3f7d
+      X-Content-Type-Options:
+      - nosniff
       X-Pinterest-Rid:
-      - '663068971330'
-      X-Varnish:
-      - '63892550'
+      - '816611333499'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '987'
       Content-Length:
-      - '51'
+      - '304'
+      Date:
+      - Tue, 23 May 2017 04:20:00 GMT
       Connection:
       - keep-alive
+      Pinterest-Generated-By:
+      - devplatform-devapi-prod-0a012f8f
     body:
       encoding: UTF-8
-      string: |-
-        {
-          "message": "404: Not Found",
-          "type": "http"
-        }
+      string: '{"data": {"url": "https://www.pinterest.com/pin/333547916137432730/",
+        "note": "Test from Ruby gem at 2017-05-23 00:20:00 -0400", "link": "https://www.pinterest.com/r/pin/333547916137432730/4779055074072594921/97052ead3fee1fdc3b8402ad515e68456cba554610086cb57f700b137867762b",
+        "id": "333547916137432730"}}'
     http_version: 
-  recorded_at: Fri, 02 Oct 2015 04:00:18 GMT
+  recorded_at: Tue, 23 May 2017 04:20:00 GMT
 recorded_with: VCR 2.9.3

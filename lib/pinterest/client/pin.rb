@@ -14,8 +14,8 @@ module Pinterest
         post('pins', params)
       end
 
-      def update_pin(params={})
-        patch('pins', params)
+      def update_pin(id, params={})
+        patch("pins/#{id}", params)
       end
 
       def delete_pin(id)

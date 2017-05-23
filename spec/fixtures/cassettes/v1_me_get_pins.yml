@@ -1,26 +1,22 @@
 ---
 http_interactions:
 - request:
-    method: patch
-    uri: https://api.pinterest.com/v1/pins/123/
+    method: get
+    uri: https://api.pinterest.com/v1/me/search/pins/?access_token=<HIDDEN>&query=shopseen
     body:
-      encoding: UTF-8
-      string: note=Test+from+Ruby+gem+at+2017-05-23+00%3A20%3A00+-0400&pin=123
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
       - Pinterest Ruby Gem 0.2.2
-      Authorization:
-      - BEARER <HIDDEN>
-      Content-Type:
-      - application/x-www-form-urlencoded
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 404
-      message: NOT FOUND
+      code: 200
+      message: OK
     headers:
       Access-Control-Allow-Origin:
       - "*"
@@ -35,22 +31,22 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Pinterest-Rid:
-      - '470209956845'
+      - '178874558164'
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '986'
+      - '892'
       Content-Length:
-      - '44'
+      - '52'
       Date:
-      - Tue, 23 May 2017 04:20:00 GMT
+      - Tue, 23 May 2017 03:00:50 GMT
       Connection:
       - keep-alive
       Pinterest-Generated-By:
-      - devplatform-devapi-prod-0a012b44
+      - devplatform-devapi-prod-0a01ee84
     body:
       encoding: UTF-8
-      string: '{"message": "Pin not found.", "type": "api"}'
+      string: '{"data": [], "page": {"cursor": null, "next": null}}'
     http_version: 
-  recorded_at: Tue, 23 May 2017 04:20:00 GMT
+  recorded_at: Tue, 23 May 2017 03:00:50 GMT
 recorded_with: VCR 2.9.3

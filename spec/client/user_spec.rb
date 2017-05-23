@@ -33,7 +33,7 @@ describe "Pinterest::Client::User" do
     it "should get the user's likes" do
       VCR.use_cassette("v1_me_likes") do
         response = @client.get_likes
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
         expect(response.data.first.keys).to match_array(['id', 'link', 'note', 'url'])
       end
     end
@@ -54,7 +54,7 @@ describe "Pinterest::Client::User" do
     it "should search the user's pins" do
       VCR.use_cassette("v1_me_get_pins") do
         response = @client.get_pins(query: 'shopseen')
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -63,7 +63,7 @@ describe "Pinterest::Client::User" do
     it "should search the user's boards" do
       VCR.use_cassette("v1_me_get_boards") do
         response = @client.get_boards(query: 'randumb')
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -72,7 +72,7 @@ describe "Pinterest::Client::User" do
     it "should get the user's followers" do
       VCR.use_cassette("v1_me_followers") do
         response = @client.get_followers
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -81,7 +81,7 @@ describe "Pinterest::Client::User" do
     it "should get boards the user is following" do
       VCR.use_cassette("v1_me_following_boards") do
         response = @client.get_followed_boards
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -90,7 +90,7 @@ describe "Pinterest::Client::User" do
     it "should get users the user is following" do
       VCR.use_cassette("v1_me_following_users") do
         response = @client.get_followed_users
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -99,7 +99,7 @@ describe "Pinterest::Client::User" do
     it "should get interests the user is following" do
       VCR.use_cassette("v1_me_following_interests") do
         response = @client.get_followed_interests
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
@@ -186,9 +186,9 @@ describe "Pinterest::Client::User" do
 
   describe 'POST /v1/me/following/interests' do
     context "another interest exists" do
-      it "should follow the interest" do
+      it "should follow the interest", skip: "Follow interests API is not supported" do
         VCR.use_cassette("v1_me_follow_existing_interest") do
-          response = @client.follow_interest('901179409185')
+          response = @client.follow_interest('937523231401')
           expect(response).to have_key(:data)
           expect(response.data).to be_falsey
         end
@@ -206,7 +206,7 @@ describe "Pinterest::Client::User" do
 
   describe 'DELETE /v1/me/following/interests/<interest_id>/' do
     context "another interest exists" do
-      it "should unfollow the interest" do
+      it "should unfollow the interest", skip: "Unfollow interests API is not supported" do
         VCR.use_cassette("v1_me_unfollow_existing_interest") do
           response = @client.unfollow_interest('901179409185')
           p response.inspect

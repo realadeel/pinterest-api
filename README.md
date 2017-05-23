@@ -51,9 +51,11 @@ client.follow_board(<board_id>)
 client.unfollow_board(<board_id>)
 
 # Follow an interest
+> This endpoint is no longer part of the Pinterest documentation, and has always returned an error
 client.follow_interest(<interest_id>)
 
 # Unfollow an interest
+> This endpoint is no longer part of the Pinterest documentation, and has always returned an error
 client.unfollow_interest(<interest_id>)
 
 # Get all of authenticated users's pins
