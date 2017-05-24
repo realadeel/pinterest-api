@@ -51,9 +51,11 @@ client.follow_board(<board_id>)
 client.unfollow_board(<board_id>)
 
 # Follow an interest
+> This endpoint is no longer part of the Pinterest documentation, and has always returned an error
 client.follow_interest(<interest_id>)
 
 # Unfollow an interest
+> This endpoint is no longer part of the Pinterest documentation, and has always returned an error
 client.unfollow_interest(<interest_id>)
 
 # Get all of authenticated users's pins
@@ -120,6 +122,23 @@ OAuth values from Pinterest in ```request.env['omniauth.auth']```
 
 For more details, check out "Integrating OmniAuth Into Your Application"  
 https://github.com/intridea/omniauth
+
+## Request options
+
+You can set any request options that are valid in `Faraday::Connection` by adding them as a has to the Pinterest Client initializer.
+
+Example:
+
+```
+  client = Pinterest::Client.new(ACCESS_TOKEN, {
+    request: {
+      timeout: 1.5,
+      open_timeout: 1,
+    }
+  })
+
+  counts = client.get_user('<username>', {fields: "counts"})
+```
 
 ## Known Issues
 

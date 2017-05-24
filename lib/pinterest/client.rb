@@ -14,8 +14,9 @@ module Pinterest
     DEFAULT_USER_AGENT = "Pinterest Ruby Gem #{Pinterest::VERSION}".freeze
     DEFAULT_ADAPTER = Faraday.default_adapter
 
-    def initialize(access_token = nil)
+    def initialize(access_token = nil, connection_options={})
       @access_token = access_token
+      @connection_options = connection_options
     end
 
     attr_reader :access_token
@@ -51,6 +52,10 @@ module Pinterest
         when :get
           path = path + "?access_token=" + @access_token
           request.url(URI.encode(path), options)
+        when :patch
+          request.path = path + "?access_token=" + @access_token
+          request.body = options unless options.empty?
+          request.headers['Authorization'] = "BEARER #{@access_token}"
         when :post, :put, :delete
           request.path = URI.encode(path)
           request.body = options unless options.empty?
@@ -61,10 +66,10 @@ module Pinterest
     end
 
     def connection(raw = false, log = false)
-      options = {
+      options = @connection_options.merge({
         :headers => {'Accept' => "application/json; charset=utf-8", 'User-Agent' => user_agent},
         :url => endpoint,
-      }
+      })
 
       Faraday::Connection.new(options) do |connection|
         unless raw

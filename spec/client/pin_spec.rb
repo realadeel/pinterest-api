@@ -56,22 +56,22 @@ describe "Pinterest::Client::Pin" do
     context "have the parameters for a pin" do
       it "should update a pin" do
         VCR.use_cassette("v1_update_pin") do
-          response = @client.update_pin({
-            id: '154177987221106968',
+          response = @client.update_pin('333547916137432730', {
+            pin: '333547916137432730',
             note: "Test from Ruby gem at #{Time.now.to_s}"
           })
-          expect(response.data.id).to be
+          expect(response.data.id).to eq('333547916137432730')
         end
       end
     end
     context "missing image for a pin" do
       it "should response with an error message" do
         VCR.use_cassette("v1_not_update_pin") do
-          response = @client.update_pin({
-            id: '123',
+          response = @client.update_pin('123', {
+            pin: '123',
             note: "Test from Ruby gem at #{Time.now.to_s}"
           })
-          expect(response.message).to be
+          expect(response.message).to eq('Pin not found.')
         end
       end
     end
@@ -101,7 +101,7 @@ describe "Pinterest::Client::Pin" do
     it "should get the board's pins" do
       VCR.use_cassette("v1_boards_pins") do
         response = @client.get_board_pins('154178055932402553')
-        expect(response.data.class).to eq(Array)
+        expect(response.data.class).to eq(Hashie::Array)
       end
     end
   end
