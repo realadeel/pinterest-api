@@ -58,16 +58,16 @@ client.follow_interest(<interest_id>)
 > This endpoint is no longer part of the Pinterest documentation, and has always returned an error
 client.unfollow_interest(<interest_id>)
 
-# Get all of authenticated users's pins
+# Get all of the authenticated users's pins
 client.get_pins  
 
-# Get all of authenticated users's boards
+# Get all of the authenticated users's boards
 client.get_boards
 
-# Search for authenticated users's pins related to shoes
+# Search for the authenticated users's pins related to shoes
 client.get_pins(query: 'shoes')  
 
-# Search for authenticated users's boards related to shoes
+# Search for the authenticated users's boards related to shoes
 client.get_boards(query: 'shoes')
 
 # Get the account info for a Pinterest user
@@ -116,7 +116,7 @@ end
 
 Direct your users to ```/auth/pinterest```
 
-Once they approve your app, they'll be redirect to your callback URL, which
+Once they approve your app, they'll be redirected to your callback URL, which
 should be something like ```auth/pinterest/callback``` with a hash of
 OAuth values from Pinterest in ```request.env['omniauth.auth']```
 
@@ -125,7 +125,7 @@ https://github.com/intridea/omniauth
 
 ## Request options
 
-You can set any request options that are valid in `Faraday::Connection` by adding them as a has to the Pinterest Client initializer.
+You can set any request options that are valid in `Faraday::Connection` by adding them as a hash to the Pinterest Client initializer.
 
 Example:
 
