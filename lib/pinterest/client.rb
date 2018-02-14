@@ -20,6 +20,7 @@ module Pinterest
     end
 
     attr_reader :access_token
+    attr_accessor :next_page_path
 
     def get(path, options={})
       request(:get, path, options)
@@ -39,6 +40,10 @@ module Pinterest
 
     def delete(path, options={})
       request(:delete, path, options)
+    end
+
+    def next_page(options={})
+      request(:get, @next_page_path, options)
     end
 
     private
@@ -62,10 +67,17 @@ module Pinterest
           request.headers['Authorization'] = "BEARER #{@access_token}"
         end
       end
+
+      if response.body && response.body.page && response.body.page.next
+        @next_page_path = parse_next(response.body.page.next)
+      end
+
       return response.body
     end
 
     def connection(raw = false, log = false)
+      puts endpoint
+
       options = @connection_options.merge({
         :headers => {'Accept' => "application/json; charset=utf-8", 'User-Agent' => user_agent},
         :url => endpoint,
@@ -81,6 +93,13 @@ module Pinterest
         connection.response :logger if log
         connection.adapter(adapter)
       end
+    end
+
+    def parse_next(next_uri)
+      uri = URI(next_uri)
+      query_without_access_token = uri.query.split("&").select { |x| !x.include?("access") }.join("&")
+      api_path = uri.path.split("/v1/").last
+      "#{api_path}?#{query_without_access_token}"
     end
 
     def endpoint
