@@ -20,7 +20,7 @@ module Pinterest
     end
 
     attr_reader :access_token
-    attr_accessor :next_page_path
+    attr_accessor :next_page_uri
 
     def get(path, options={})
       request(:get, path, options)
@@ -42,8 +42,22 @@ module Pinterest
       request(:delete, path, options)
     end
 
-    def next_page(options={})
-      request(:get, @next_page_path, options)
+    def next_page
+      path = parse_next_path(@next_page_uri)
+      options = parse_next_options(@next_page_uri)
+      request(:get, path, options)
+    end
+
+    def parse_next_path(next_uri)
+      uri = URI(next_uri)
+      uri.path.split("/v1/").last
+    end
+
+    def parse_next_options(next_uri)
+      uri = URI(next_uri)
+      query_params = CGI.parse(uri.query)
+      query_params.delete("access_token")
+      query_params
     end
 
     private
@@ -51,7 +65,9 @@ module Pinterest
     def request(method, path, options)
       raw = options.delete(:raw)
       log = options.delete(:log)
+
       path = File.join(path, '')
+
       response = connection(raw, log).send(method) do |request|
         case method
         when :get
@@ -69,15 +85,13 @@ module Pinterest
       end
 
       if response.body && response.body.page && response.body.page.next
-        @next_page_path = parse_next(response.body.page.next)
+        @next_page_uri = response.body.page.next
       end
 
       return response.body
     end
 
     def connection(raw = false, log = false)
-      puts endpoint
-
       options = @connection_options.merge({
         :headers => {'Accept' => "application/json; charset=utf-8", 'User-Agent' => user_agent},
         :url => endpoint,
@@ -93,13 +107,6 @@ module Pinterest
         connection.response :logger if log
         connection.adapter(adapter)
       end
-    end
-
-    def parse_next(next_uri)
-      uri = URI(next_uri)
-      query_without_access_token = uri.query.split("&").select { |x| !x.include?("access") }.join("&")
-      api_path = uri.path.split("/v1/").last
-      "#{api_path}?#{query_without_access_token}"
     end
 
     def endpoint
