@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.pinterest.com/v1/me/following/users/?access_token=<HIDDEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Pinterest Ruby Gem 0.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - "*"
+      Age:
+      - '0'
+      Cache-Control:
+      - private
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 02 Oct 2015 03:47:32 GMT
+      Pinterest-Generated-By:
+      - None
+      Pinterest-Version:
+      - ff67fd1
+      Server:
+      - nginx
+      Via:
+      - 1.1 varnish
+      X-Content-Type-Options:
+      - nosniff
+      X-Pinterest-Rid:
+      - '552612725114'
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '962'
+      X-Varnish:
+      - '1327564201'
+      Content-Length:
+      - '1170'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data": [{"url": "https://www.pinterest.com/notarealuser/", "first_name":
+        "form", "last_name": "information", "id": "451063856337266571"}, {"url": "https://www.pinterest.com/mistermgr/",
+        "first_name": "matt", "last_name": "robles", "id": "279082645567049623"},
+        {"url": "https://www.pinterest.com/ooitsadam/", "first_name": "Adam", "last_name":
+        "Clemente", "id": "244390854687460043"}, {"url": "https://www.pinterest.com/ghipydesign/",
+        "first_name": "GhiPy", "last_name": "BoLa\u00f1O", "id": "127508370608357643"},
+        {"url": "https://www.pinterest.com/jeorgeabeck/", "first_name": "Jeorgea",
+        "last_name": "Beck", "id": "51861970617372995"}, {"url": "https://www.pinterest.com/nimsie/",
+        "first_name": "Nirmala", "last_name": "Basnayake", "id": "94786904565746622"},
+        {"url": "https://www.pinterest.com/lauriwu/", "first_name": "Laura", "last_name":
+        "Behrens", "id": "14285061226500816"}, {"url": "https://www.pinterest.com/zaugustine/",
+        "first_name": "Zach", "last_name": "Augustine", "id": "76139187358662660"},
+        {"url": "https://www.pinterest.com/jallamano/", "first_name": "Justin", "last_name":
+        "Allamano", "id": "45880627362271070"}, {"url": "https://www.pinterest.com/mwbrennan/",
+        "first_name": "Molly", "last_name": "Brennan", "id": "150589318698631216"},
+        {"url": "https://www.pinterest.com/klinear/", "first_name": "Aaron Kline",
+        "last_name": "", "id": "396387342111228993"}, {"url": "https://www.pinterest.com/brookperdigon/",
+        "first_name": "Brook Perdigon", "last_name": "Textiles", "id": "125186202050497263"},
+        {"url": "https://www.pinterest.com/erikabrandwein/", "first_name": "Erika",
+        "last_name": "Brandwein", "id": "427982908247034816"}, {"url": "https://www.pinterest.com/annawronsky/",
+        "first_name": "Anna", "last_name": "Wronsky", "id": "412642522016298857"},
+        {"url": "https://www.pinterest.com/shilpitomar/", "first_name": "Shilpi",
+        "last_name": "Tomar", "id": "68750469220008505"}, {"url": "https://www.pinterest.com/brendanmcgeever/",
+        "first_name": "Brendan", "last_name": "McGeever", "id": "328622241468146982"},
+        {"url": "https://www.pinterest.com/sabilak/", "first_name": "Sabila", "last_name":
+        "Khan", "id": "187955121856975295"}, {"url": "https://www.pinterest.com/juliajuliet/",
+        "first_name": "Julia", "last_name": "Soffa", "id": "265782952917473091"},
+        {"url": "https://www.pinterest.com/gentrylin/", "first_name": "Gentry", "last_name":
+        "Lin Owens", "id": "502503408331152485"}, {"url": "https://www.pinterest.com/blok1384/",
+        "first_name": "Irina", "last_name": "Blok", "id": "343118202768743682"}, {"url":
+        "https://www.pinterest.com/elmorel08/", "first_name": "Lindsey", "last_name":
+        "Elmore", "id": "9922199087482992"}, {"url": "https://www.pinterest.com/beltzner/",
+        "first_name": "Mike", "last_name": "Beltzner", "id": "520025225631369855"},
+        {"url": "https://www.pinterest.com/dijitalfix/", "first_name": "Dijital Fix",
+        "last_name": "", "id": "476748447962112300"}, {"url": "https://www.pinterest.com/MrsCHanson/",
+        "first_name": "Caitlyn", "last_name": "Hanson", "id": "114349415447137316"},
+        {"url": "https://www.pinterest.com/shopseen/", "first_name": "Shopseen", "last_name":
+        "", "id": "339670134304018573"}], "page": {"cursor": "Pz8xMDAyMjcxNTYuNDQ5Xy0xfGQ4ODhhNjJjYjU5MTc2OGI1OGYxYTkwMjg2NTI2MmU1MjY4YTAxY2U4OWM1YWIyNWU3MDI4YWZmZDg5OWVjN2U=",
+        "next": "https://api.pinterest.com/v1/me/following/users/?access_token=<HIDDEN>&cursor=Pz8xMDAyMjcxNTYuNDQ5Xy0xfGQ4ODhhNjJjYjU5MTc2OGI1OGYxYTkwMjg2NTI2MmU1MjY4YTAxY2U4OWM1YWIyNWU3MDI4YWZmZDg5OWVjN2U%3D"}}'
+    http_version:
+  recorded_at: Fri, 02 Oct 2015 03:47:32 GMT
+recorded_with: VCR 2.9.3
