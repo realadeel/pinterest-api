@@ -73,18 +73,15 @@ module Pinterest
       })
 
       Faraday::Connection.new(options) do |connection|
-        if @connection_config
-          @connection_config.call(connection)
-        else
-          unless raw
-            connection.use FaradayMiddleware::Mashify
-          end
-          connection.use Faraday::Request::Multipart
-          connection.use Faraday::Response::ParseJson
-          connection.use Faraday::Request::UrlEncoded
-          connection.response :logger if log
-          connection.adapter(adapter)
+        unless raw
+          connection.use FaradayMiddleware::Mashify
         end
+        connection.use Faraday::Request::Multipart
+        connection.use Faraday::Response::ParseJson
+        connection.use Faraday::Request::UrlEncoded
+        connection.response :logger if log
+        @connection_config.call(connection) if @connection_config
+        connection.adapter(adapter)
       end
     end
 
