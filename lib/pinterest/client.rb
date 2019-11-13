@@ -14,9 +14,10 @@ module Pinterest
     DEFAULT_USER_AGENT = "Pinterest Ruby Gem #{Pinterest::VERSION}".freeze
     DEFAULT_ADAPTER = Faraday.default_adapter
 
-    def initialize(access_token = nil, connection_options={})
+    def initialize(access_token = nil, connection_options={}, &connection_config)
       @access_token = access_token
       @connection_options = connection_options
+      @connection_config = connection_config
     end
 
     attr_reader :access_token
@@ -72,14 +73,18 @@ module Pinterest
       })
 
       Faraday::Connection.new(options) do |connection|
-        unless raw
-          connection.use FaradayMiddleware::Mashify
+        if @connection_config
+          @connection_config.call(connection)
+        else
+          unless raw
+            connection.use FaradayMiddleware::Mashify
+          end
+          connection.use Faraday::Request::Multipart
+          connection.use Faraday::Response::ParseJson
+          connection.use Faraday::Request::UrlEncoded
+          connection.response :logger if log
+          connection.adapter(adapter)
         end
-        connection.use Faraday::Request::Multipart
-        connection.use Faraday::Response::ParseJson
-        connection.use Faraday::Request::UrlEncoded
-        connection.response :logger if log
-        connection.adapter(adapter)
       end
     end
 
