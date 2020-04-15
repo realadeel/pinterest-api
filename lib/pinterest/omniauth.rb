@@ -15,6 +15,7 @@ module OmniAuth
       def request_phase
         options[:scope] ||= 'read_public'
         options[:response_type] ||= 'code'
+        options[:consumer_id] ||= options[:client_id]
         super
       end
 
