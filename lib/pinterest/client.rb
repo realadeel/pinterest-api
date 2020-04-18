@@ -10,7 +10,7 @@ module Pinterest
     include Pinterest::Client::Pin
     include Pinterest::Client::Board
 
-    BASE_ENDPOINT = 'https://api.pinterest.com/v1/'.freeze
+    BASE_ENDPOINT = 'https://api.pinterest.com/v3/'.freeze
     DEFAULT_USER_AGENT = "Pinterest Ruby Gem #{Pinterest::VERSION}".freeze
     DEFAULT_ADAPTER = Faraday.default_adapter
 

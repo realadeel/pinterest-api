@@ -15,7 +15,7 @@ module Pinterest
       end
 
       def get_boards(options={})
-        get("me/boards", options)
+        get("users/me/boards/feed/", options)
       end
 
       def get_followed_boards(options={})
