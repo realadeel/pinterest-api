@@ -59,11 +59,6 @@ module Pinterest
         get('me/search/pins', options)
       end
 
-      def get_boards(options={})
-        options[:query] ||= '*'
-        get('me/search/boards', options)
-      end
-
       def get_user(user, options={})
         get("users/#{user}", options)
       end
