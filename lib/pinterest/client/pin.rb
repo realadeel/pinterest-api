@@ -11,7 +11,11 @@ module Pinterest
       end
 
       def create_pin(params={})
-        post('pins', params)
+        put('pins', params)
+      end
+
+      def save_pin(pin_id, params={})
+        post("partners/pins/#{pin_id}/save", params)
       end
 
       def update_pin(id, params={})
