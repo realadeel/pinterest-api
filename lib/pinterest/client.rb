@@ -2,6 +2,7 @@ require 'faraday_middleware'
 require 'pinterest/client/user'
 require 'pinterest/client/pin'
 require 'pinterest/client/board'
+require 'pinterest/client/media'
 
 module Pinterest
   class Client
@@ -9,6 +10,7 @@ module Pinterest
     include Pinterest::Client::User
     include Pinterest::Client::Pin
     include Pinterest::Client::Board
+    include Pinterest::Client::Media
 
     BASE_ENDPOINT = 'https://api.pinterest.com/v3/'.freeze
     DEFAULT_USER_AGENT = "Pinterest Ruby Gem #{Pinterest::VERSION}".freeze
