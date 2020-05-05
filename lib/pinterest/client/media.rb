@@ -12,14 +12,14 @@ module Pinterest
       def upload(options = {})
         upload_id, upload_url, upload_parameters = register_upload(options)
 
-        source_url = options.delete(:source_url)
+        video_url = options.delete(:video_url)
         timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
-        media = open(source_url, 'rb')
+        media = open(video_url, 'rb')
 
         upload_resp = connection.send(:post) do |req|
           req.path = URI.encode(File.join(upload_url, ''))
           req.headers['Content-Type'] = "multipart/form-data"
-          req.body = upload_parameters.merge({ file: Faraday::UploadIO.new(media, content_type(media))})
+          req.body = upload_parameters.merge({ file: Faraday::UploadIO.new(media, content_type(media)) })
         end
 
         raise UploadFailed unless upload_resp.success?
@@ -59,27 +59,6 @@ module Pinterest
 
       def get_content_type_from_file(media)
         `file --brief --mime-type - < #{Shellwords.shellescape(media.path)}`.strip
-      end
-
-      def poll_for_completion(asset_entity:)
-        Timeout.timeout(DEFAULT_TIMEOUT_SECONDS, UploadTimeout) do
-          loop do
-            upload_status = upload_status(asset_entity: asset_entity).recipes[0].status
-
-            case upload_status
-            when "WAITING_UPLOAD"
-              sleep POLL_SLEEP_SECONDS
-            when "PROCESSING"
-              sleep POLL_SLEEP_SECONDS
-            when "INCOMPLETE"
-              raise UploadIncomplete
-            when "CLIENT_ERROR"
-              raise UploadClientError
-            when "AVAILABLE"
-              break
-            end
-          end
-        end
       end
     end
   end

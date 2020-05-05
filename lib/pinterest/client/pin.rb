@@ -11,7 +11,15 @@ module Pinterest
       end
 
       def create_pin(params={})
-        put('pins', params)
+        video_url = params[:video_url]
+
+        if video_url
+          upload_id = upload(video_url: video_url)
+
+          put('pins', params.merge(media_upload_id: upload_id))
+        else
+          put('pins', params)
+        end
       end
 
       def save_pin(pin_id, params={})
