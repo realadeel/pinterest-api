@@ -1,3 +1,5 @@
+require 'streamio-ffmpeg'
+
 module Pinterest
   class Client
     module Media
@@ -6,25 +8,26 @@ module Pinterest
       DEFAULT_ASSET_TYPE = 'video'.freeze
       CONTENT_TYPE = 'application/json'.freeze
 
-      DEFAULT_TIMEOUT_SECONDS = 300
-      POLL_SLEEP_SECONDS = 5
-
       def upload(options = {})
         upload_id, upload_url, upload_parameters = register_upload(options)
 
         video_url = options.delete(:video_url)
-        timeout = options.delete(:timeout) || DEFAULT_TIMEOUT_SECONDS
         media = open(video_url, 'rb')
 
         upload_resp = connection.send(:post) do |req|
           req.path = URI.encode(File.join(upload_url, ''))
           req.headers['Content-Type'] = "multipart/form-data"
-          req.body = upload_parameters.merge({ file: Faraday::UploadIO.new(media, content_type(media)) })
+          req.body = upload_parameters.merge(
+            file: Faraday::UploadIO.new(media, content_type(media))
+          )
         end
 
         raise UploadFailed unless upload_resp.success?
 
-        upload_id
+        movie = ::FFMPEG::Movie.new(media.path)
+        screenshot = movie.screenshot("tmp/#{upload_filename(media)}-screenshot.jpg")
+
+        [upload_id, Faraday::UploadIO.new(screenshot.path, 'jpg')]
       end
 
       private

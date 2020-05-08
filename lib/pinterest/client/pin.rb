@@ -11,14 +11,14 @@ module Pinterest
       end
 
       def create_pin(params={})
-        video_url = params[:video_url]
+        video = params.delete(:video)
+        image = params.delete(:image)
 
-        if video_url
-          upload_id = upload(video_url: video_url)
-
-          put('pins', params.merge(media_upload_id: upload_id))
+        if video
+          upload_id, screenshot = upload(video_url: video.url)
+          put('pins', params.merge(media_upload_id: upload_id, image: screenshot))
         else
-          put('pins', params)
+          put('pins', params.merge(image_url: image.url))
         end
       end
 
