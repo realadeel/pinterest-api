@@ -51,36 +51,36 @@ module OmniAuth
   end
 end
 
-module OAuth2
-  # The OAuth2::Client class
-  class Client # rubocop:disable Metrics/ClassLength
+# module OAuth2
+#   # The OAuth2::Client class
+#   class Client # rubocop:disable Metrics/ClassLength
 
-    # Initializes an AccessToken by making a request to the token endpoint
-    #
-    # @param [Hash] params a Hash of params for the token endpoint
-    # @param [Hash] access token options, to pass to the AccessToken object
-    # @param [Class] class of access token for easier subclassing OAuth2::AccessToken
-    # @return [AccessToken] the initialized AccessToken
-    def get_token(params, access_token_opts = {}, access_token_class = AccessToken) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      params = Authenticator.new(id, secret, options[:auth_scheme]).apply(params)
-      opts = {:raise_errors => options[:raise_errors], :parse => params.delete(:parse)}
-      headers = params.delete(:headers) || {}
-      if options[:token_method] == :post
-        opts[:body] = params
-        opts[:headers] = {'Content-Type' => 'application/x-www-form-urlencoded'}
-      else
-        opts[:params] = params
-        opts[:headers] = {}
-      end
-      opts[:headers].merge!(headers)
-      response = request(options[:token_method], token_url, opts)
+#     # Initializes an AccessToken by making a request to the token endpoint
+#     #
+#     # @param [Hash] params a Hash of params for the token endpoint
+#     # @param [Hash] access token options, to pass to the AccessToken object
+#     # @param [Class] class of access token for easier subclassing OAuth2::AccessToken
+#     # @return [AccessToken] the initialized AccessToken
+#     def get_token(params, access_token_opts = {}, access_token_class = AccessToken) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+#       params = Authenticator.new(id, secret, options[:auth_scheme]).apply(params)
+#       opts = {:raise_errors => options[:raise_errors], :parse => params.delete(:parse)}
+#       headers = params.delete(:headers) || {}
+#       if options[:token_method] == :post
+#         opts[:body] = params
+#         opts[:headers] = {'Content-Type' => 'application/x-www-form-urlencoded'}
+#       else
+#         opts[:params] = params
+#         opts[:headers] = {}
+#       end
+#       opts[:headers].merge!(headers)
+#       response = request(options[:token_method], token_url, opts)
 
-      if options[:raise_errors] && !(response.parsed.is_a?(Hash) && response.parsed['data']['access_token'])
-        error = Error.new(response)
-        raise(error)
-      end
+#       if options[:raise_errors] && !(response.parsed.is_a?(Hash) && response.parsed['data']['access_token'])
+#         error = Error.new(response)
+#         raise(error)
+#       end
 
-      access_token_class.from_hash(self, response.parsed['data'].merge(access_token_opts))
-    end
-  end
-end
+#       access_token_class.from_hash(self, response.parsed['data'].merge(access_token_opts))
+#     end
+#   end
+# end
