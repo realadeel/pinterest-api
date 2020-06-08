@@ -75,12 +75,17 @@ module OAuth2
       opts[:headers].merge!(headers)
       response = request(options[:token_method], token_url, opts)
 
-      if options[:raise_errors] && !(response.parsed.is_a?(Hash) && response.parsed['data']['access_token'])
+      if options[:raise_errors] &&
+        !(
+          response.parsed.is_a?(Hash) &&
+          (response.parsed.try(:[], 'access_token') || response.parsed.try(:[], "data").try(:[], 'access_token'))
+        )
         error = Error.new(response)
         raise(error)
       end
 
-      access_token_class.from_hash(self, response.parsed['data'].merge(access_token_opts))
+      data = response.parsed['data'] || response.parsed
+      access_token_class.from_hash(self, data.merge(access_token_opts))
     end
   end
 end
