@@ -19,15 +19,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.10"
+  spec.add_development_dependency "bundler", "~> 2.1"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.3"
   spec.add_development_dependency "vcr", "~> 2.9"
   spec.add_development_dependency "dotenv", "~> 2.0"
   spec.add_development_dependency "webmock", "~> 3.0.1"
 
-  spec.add_dependency 'faraday', "~> 0.9"
-  spec.add_dependency 'faraday_middleware', "~> 0.9"
+  spec.add_dependency 'faraday', "~> 1.0.0"
+  spec.add_dependency 'faraday_middleware', "~> 1.0.0"
   spec.add_dependency 'hashie', "~> 3.0"
   spec.add_dependency 'omniauth', '~> 1.0'
   spec.add_dependency 'omniauth-oauth2', '~> 1.0'
