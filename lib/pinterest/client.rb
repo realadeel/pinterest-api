@@ -53,13 +53,13 @@ module Pinterest
         case method
         when :get
           path = path + "?access_token=" + @access_token
-          request.url(URI.encode(path), options)
+          request.url(CGI.escape(path), options)
         when :patch
           request.path = path + "?access_token=" + @access_token
           request.body = options unless options.empty?
           request.headers['Authorization'] = "BEARER #{@access_token}"
         when :post, :put, :delete
-          request.path = URI.encode(path)
+          request.path = CGI.escape(path)
           request.body = options unless options.empty?
           request.headers['Authorization'] = "BEARER #{@access_token}"
         end
